@@ -1,0 +1,320 @@
+#main-content {
+  margin: 16px 15px 40px;
+  padding-bottom: 32px;
+  border-bottom: 2px solid var(--light-gray);
+  @include pc-width {
+    margin: 90px 0 100px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: none;
+    .upper-content {
+      flex: 50%;
+      margin-right: 10%;
+      position: relative;
+    }
+    .lower-content {
+      flex: 40%;
+    }
+  }
+}
+
+.check {
+  height: 38px;
+  line-height: 38px;
+  margin-bottom: 24px;
+  @include pc-width {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 48px;
+  }
+}
+
+.stepper-container {
+  display: flex;
+  height: 32px;
+  .step {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    @include getStepNums(3);
+    &:first-child {
+      justify-content: flex-start;
+      .connect-line {
+        @include connect-line;
+        left: calc(36px + 22%);
+        right: calc(-36px + 22%);
+        @include pc-width {
+          left: calc(80px + 22%);
+          right: calc(-60px + 22%);
+        }
+      }
+    }
+    &:nth-child(2) {
+      justify-content: center;
+      .connect-line {
+        @include connect-line;
+        left: calc(72px + 22%);
+        right: calc(-72px + 22%);
+        @include pc-width {
+          left: calc(120px + 22%);
+          right: calc(-100px + 22%);
+        }
+      }
+    }
+    .circle-container {
+      text-align: center;
+      height: 32px;
+      width: 32px;
+      background-color: transparent;
+      border-radius: 50%;
+      color: var(--disable-gray);
+      border: 1px solid var(--disable-gray);
+      + p {
+        line-height: 2rem;
+        display: none;
+        @include pc-width {
+          display: block;
+          font-size: 1rem;
+          margin-left: 9px;
+          color: var(--disable-gray);
+        }
+      }
+    }
+    &.active .circle-container,
+    &.done .circle-container{
+      border: 1px solid var(--main-font);
+      + p {
+        @include pc-width {
+          display: block;
+          color: var(--main-font);
+        }
+      }
+      ~ .connect-line {
+        background: var(--main-font);
+      }
+    }
+    &.active .circle-container::before {
+      color: var(--main-font);
+    }
+    &.done .circle-container {
+      background-color: var(--dark-gray);
+      &::before {
+        content: "\2714";
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.form-panel {
+  width: 100%;
+  height: 70%;
+  form {
+    width: 100%;
+    height: 100%;
+    .part {
+      height: 100%;
+    }
+  }
+  .form-title {
+    margin: 24px 0;
+    font-weight: bolder;
+    color: var(--main-font);
+  }
+  .form-row {
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    > label {
+      font-size: 0.75rem;
+      line-height: 1rem;
+      color: var(--label-gray);
+      margin-bottom: 8px;
+    }
+    &:last-child {
+      margin-bottom: 32px;
+    }
+  }
+  @include pc-width {
+    display: flex;
+  }
+}
+
+.form-container {
+  height: 390px;
+  margin-bottom: 90px;
+  @include pc-width {
+    border-bottom: 2px solid var(--light-gray);
+  }
+}
+.form-container input {
+  @include input;
+  &::-webkit-input-placeholder {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: var(--placeholder-gray);
+  }
+}
+
+.form-container select {
+  @include input;
+  &:invalid,
+  option[value=""] {
+    color: var(--placeholder-gray);
+  }
+  option {
+    background-color: var(--light-gray);
+  }
+}
+
+#gender-type {
+  color: var(--placeholder-gray);
+}
+
+.address-method {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  .form-row {
+    flex: 100%;
+  }
+  .form-row:first-child {
+    flex: 30%;
+    margin-right: 4%;
+  }
+  .form-row:nth-child(2) {
+    flex: 60%;
+    margin-left: 4%;
+  }
+  @include pc-width {
+    .form-row:nth-child(3) {
+      margin-right: 8%;
+    }
+    .form-row:nth-child(3),
+    .form-row:nth-child(4) {
+      flex: 45%;
+    }
+    .form-row:nth-last-child(2) {
+      flex: 30%;
+      margin-right: 4%;
+    }
+    .form-row:last-child {
+      flex: 60%;
+      margin-left: 4%;
+    }
+  }
+}
+
+.delivery-method .form-row {
+  display: flex;
+  flex-flow: row nowrap;
+  border-radius: 4px;
+  @include border();
+  input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin: 20px 20px;
+  }
+  &:first-child {
+    margin-bottom: 24px;
+  }
+  &:last-child {
+    margin-bottom: 32px;
+  }
+  .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 11px 20px 11px 0px;
+    font-weight: bold;
+    color: var(--main-font);
+    span {
+      font-size: 0.75rem;
+      line-height: 1rem;
+      color: var(--label-gray);
+    }
+    .wrapper-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      p {
+        line-height: 1.25rem;
+        font-size: .875rem;
+      }
+      span {
+        line-height: 1rem;
+        font-size: 0.75rem;
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+.payment-method {
+  display: flex;
+  flex-flow: row wrap;
+  .form-row {
+    flex: 100%;
+  }
+  .form-row:nth-last-child(2) {
+    flex: 0.5;
+    margin-right: 4%;
+  }
+  .form-row:last-child {
+    flex: 0.5;
+    margin-left: 4%;
+  }
+}
+
+.step-btn-group {
+  width: calc(100% - 40px);
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -80px;
+  .next,
+  .forward {
+    @include step-btn;
+    display: flex;
+    align-items: center;
+    p {
+      font-size: .875rem;
+      line-height: 1.0625rem;
+      margin: 0 13px;
+    }
+    img {
+      width: 20px;
+    }
+  }
+  .next {
+    color: var(--white);
+    background-color: var(--next-btn);
+    justify-content: center;
+    flex: 1;
+  }
+  .forward {
+    justify-content: start;
+    color: var(--main-font);
+    flex: 1;
+    div {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      background-image: var(--left-arrow);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  @include pc-width {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-top: 64px;
+    justify-content: flex-end;
+    .next,
+    .forward {
+      flex: 0 50%;
+    }
+  }
+}

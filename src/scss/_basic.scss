@@ -1,0 +1,59 @@
+@mixin step-btn {
+  height: 46px;
+  width: 156px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
+@mixin connect-line {
+  display: block;
+  height: 1px;
+  background-color: var(--footer-background);
+  position: absolute;
+  top: 16px;
+}
+@mixin box-shadow {
+  box-shadow: 3px 0 13px 0 rgba(100, 112, 134, 0.1);
+}
+@mixin border {
+  border: var(--dark-gray) 1px solid;
+}
+@mixin input {
+  border: 1px var(--dark-gray) solid;
+  border-radius: 4px;
+  height: 40px;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--body-bg);
+}
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i}) .circle-container::before {
+      content: "#{$i}";
+      line-height: 30px;
+      background-color: var();
+    }
+  }
+}
+$pc-media: 375px;
+@mixin pc-width() {
+  @media all and (min-width: $pc-media) {
+    @content;
+  }
+}
+
+html {
+  font-size: 1rem;
+  font-family: "Noto Sans TC", sans-serif;
+  min-width: 350px;
+  color: var(--main-font);
+}
+body {
+  background: var(--body-bg);
+}
+#main-app {
+  min-width: 350px;
+  position: relative;
+  @include pc-width {
+    margin: 0px 98px;
+  }
+}

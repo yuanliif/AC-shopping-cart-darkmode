@@ -1,0 +1,35 @@
+:root {
+  --white: #fff;
+  --body-bg: #fff;
+  --main-font: #2a2a2a;
+  --dark-gray: #4a4a4a;
+  --light-gray: #f0f0f5;
+  --disable-gray: #afb1bd;
+  --label-gray: #808080;
+  --placeholder-gray: #999;
+  --next-btn: #f67599;
+  --footer-background: #f6f7f8;
+  --lower-content: transparent;
+  --magnifier: url(../public/magnifier-icon@2x.png);
+  --cart: url(../public/cart-icon@2x.png);
+  --night: url(../public/night-icon@2x.png);
+  --left-arrow: url(../public/arrow_left@2x.png);
+}
+// dark
+[data-theme="dark"] {
+  --white: #fff;
+  --body-bg: #121212;
+  --main-font: #fff;
+  --dark-gray: #5e5e5e;
+  --light-gray: #808080;
+  --disable-gray: rgba(255, 255, 255, 0.4);
+  --label-gray: rgba(255, 255, 255, 0.4);
+  --placeholder-gray: rgba(255, 255, 255, 0.4);
+  --next-btn: #f67599;
+  --footer-background: #333333;
+  --lower-content: #383838;
+  --magnifier: url(../public/magnifier-icon-dark@2x.png);
+  --cart: url(../public/cart-icon-dark@2x.png);
+  --night: url(../public/light-icon@2x.png);
+  --left-arrow: url(../public/arrow_left_night@2x.png);
+}
