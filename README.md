@@ -18,7 +18,7 @@
    
 ### 畫面展示
 <<<<<<< HEAD
-![image](./public/screenshot.png)
+![image](./public/screenshot.PNG)
 ![image](./public/screenshot-darkmode.png)# AC-shopping-cart
 
 
