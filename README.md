@@ -2,6 +2,7 @@
 ```
 購物車切版。
 ```
+
 ##功能
 
 1. RWD 設計與網頁版
@@ -17,7 +18,7 @@
 3. mini-css-extract-plugin: 2.4.6
    
 ### 畫面展示
-<<<<<<< HEAD
+
 ![image](./public/screenshot.PNG)
 ![image](./public/screenshot-darkmode.png)# AC-shopping-cart
 
